@@ -24,39 +24,42 @@ const Register = () => {
   };
   useEffect(() => {
     if (isRegestered) {
-      navigate('/login');
+      navigate('/contacts');
     }
   }, [isRegestered, navigate]);
 
   return (
-    <form onSubmit={handleSubmit} className='mb-2 flex flex-col items-start gap-4'>
+    <form
+      onSubmit={handleSubmit}
+      className="mb-2 flex flex-col items-start gap-4"
+    >
       <input
-        className='ml-6 rounded-lg bg-blue-500 px-2 text-white'
-        type='text'
-        name='name'
+        className="ml-6 rounded-lg bg-blue-500 px-2 text-white"
+        type="text"
+        name="name"
         value={formData.name}
         onChange={handleChange}
-        placeholder='name'
+        placeholder="name"
       />
       <input
-        className='ml-6 rounded-lg bg-blue-500 px-2 text-white'
-        type='email'
-        name='email'
+        className="ml-6 rounded-lg bg-blue-500 px-2 text-white"
+        type="email"
+        name="email"
         value={formData.email}
         onChange={handleChange}
-        placeholder='email'
+        placeholder="email"
       />
       <input
-        className='ml-6 rounded-lg bg-blue-500 px-2 text-white'
-        type='password'
-        name='password'
+        className="ml-6 rounded-lg bg-blue-500 px-2 text-white"
+        type="password"
+        name="password"
         value={formData.password}
         onChange={handleChange}
-        placeholder='password'
+        placeholder="password"
       />
       <button
-        className='ml-auto rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-green-600 active:bg-rose-700'
-        type='submit'
+        className="ml-auto rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-green-600 active:bg-rose-700"
+        type="submit"
       >
         Register
       </button>

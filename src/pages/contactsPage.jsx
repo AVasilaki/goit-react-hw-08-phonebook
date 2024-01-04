@@ -20,7 +20,7 @@ const ContactsPage = () => {
       <AddContact></AddContact>
       <Filter></Filter>
       {isLoading && !error && <b>loading in progress...</b>}
-      <Contacts></Contacts>;
+      <Contacts></Contacts>
     </>
   );
 };
