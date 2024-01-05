@@ -13,7 +13,7 @@ const Register = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isRegestered } = useSelector(getUser);
+  const { isLoggedIn } = useSelector(getUser);
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -23,10 +23,10 @@ const Register = () => {
     dispatch(fetchCreateUser(formData));
   };
   useEffect(() => {
-    if (isRegestered) {
+    if (isLoggedIn) {
       navigate('/contacts');
     }
-  }, [isRegestered, navigate]);
+  }, [isLoggedIn, navigate]);
 
   return (
     <form

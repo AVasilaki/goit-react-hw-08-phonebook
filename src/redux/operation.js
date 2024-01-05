@@ -69,7 +69,7 @@ export const fetchCreateUser = createAsyncThunk(
         }
       );
       setAuthHeader(response.data.token);
-      console.log(response.data.token);
+
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -88,7 +88,7 @@ export const fetchLoginUser = createAsyncThunk(
         }
       );
       setAuthHeader(response.data.token);
-      console.log(response.data.token);
+
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

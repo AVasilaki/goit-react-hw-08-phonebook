@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAddContact } from '../../redux/operation';
-// import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export const AddContact = () => {
   const dispatch = useDispatch();
