@@ -1,8 +1,6 @@
 import { fetchCreateUser } from '../redux/operation';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUser } from '../redux/selectors';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -12,8 +10,7 @@ const Register = () => {
   });
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { isLoggedIn } = useSelector(getUser);
+
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -22,11 +19,6 @@ const Register = () => {
     e.preventDefault();
     dispatch(fetchCreateUser(formData));
   };
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate('/contacts');
-    }
-  }, [isLoggedIn, navigate]);
 
   return (
     <form
