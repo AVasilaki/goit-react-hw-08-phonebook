@@ -5,6 +5,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { NavMenu } from './navLink/NavLink';
 import { getUser } from '../redux/selectors.js';
 import PrivatRoots from './PrivateRout.jsx';
+import { Toaster } from 'react-hot-toast';
 
 const Home = lazy(() => import('../pages/homePage.jsx'));
 const ContactsPage = lazy(() => import('../pages/contactsPage.jsx'));
@@ -40,6 +41,7 @@ export const App = () => {
             </Route>
           </Route>
         </Routes>
+        <Toaster />
       </Suspense>
     </>
   );
