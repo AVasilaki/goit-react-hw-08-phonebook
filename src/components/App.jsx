@@ -23,20 +23,21 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <>
-      <NavMenu></NavMenu>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route
-            path="/login"
-            element={isLoggedIn ? <Navigate to="/contacts" /> : <Login />}
-          ></Route>
-          <Route
-            path="/register"
-            element={isLoggedIn ? <Navigate to="/contacts" /> : <Register />}
-          ></Route>
-          <Route element={<PrivatRoots></PrivatRoots>}>
-            <Route path="/contacts" element={<ContactsPage />}></Route>
+          <Route path="/" element={<NavMenu />}>
+            <Route index element={<Home />} />
+            <Route
+              path="login"
+              element={isLoggedIn ? <Navigate to="/contacts" /> : <Login />}
+            />
+            <Route
+              path="register"
+              element={isLoggedIn ? <Navigate to="/contacts" /> : <Register />}
+            />
+            <Route element={<PrivatRoots />}>
+              <Route path="contacts" element={<ContactsPage />} />
+            </Route>
           </Route>
         </Routes>
       </Suspense>
